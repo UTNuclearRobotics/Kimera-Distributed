@@ -1,0 +1,136 @@
+# Requires these plugin packages at runtime:
+#   std_msgs_robofleet
+#   geometry_msgs_robofleet
+#   std_srvs_robofleet
+
+params:
+  # leave blank to run in Direct Mode
+  host_url: "ws://127.0.0.1:8080"
+  
+  wait_for_pongs: true
+  max_queue_before_waiting: 5
+
+  # uncomment to run in Direct Mode
+  #direct_mode_port: 8080
+  #direct_mode_bytes_per_sec: 2048000
+
+  # Verbosity 0 - MINIMAL
+  # Verbosity 1 - CONFIG_ONLY
+  # Verbosity 2 - ALL
+  verbosity: 1
+
+  # you may need more threads to handle a large amount of traffic
+  spin_threads: 1
+  
+subscribers: [
+  {
+    client_topic: "/jackal/forward/color/image_raw/compressed", 
+    rbf_topic: "/jackal/realsense_front/color/image_raw/compressed",  
+    type: "sensor_msgs/CompressedImage"
+  },
+  {
+    client_topic: "/jackal/forward/color/camera_info",
+    rbf_topic: "/jackal/realsense_front/color/camera_info",
+    type: "sensor_msgs/CameraInfo"
+  },
+  {
+    client_topic: "/jackal/forward/depth/image_rect_raw",
+    rbf_topic: "/jackal/realsense_front/depth/image_rect_raw",
+    type: "sensor_msgs/Image"
+  },
+  {
+    client_topic: "/jackal/forward/depth/camera_info",
+    rbf_topic: "/jackal/realsense_front/depth/camera_info",
+    type: "sensor_msgs/CameraInfo"
+  },
+  {
+    client_topic: "/jackal/forward/infra1/image_rect_raw/compressed",
+    rbf_topic: "/jackal/realsense_front/infra1/image_rect_raw/compressed",
+    type: "sensor_msgs/CompressedImage"
+  },
+  {
+    client_topic: "/jackal/forward/infra1/camera_info",
+    rbf_topic: "/jackal/realsense_front/infra1/camera_info",
+    type: "sensor_msgs/CameraInfo"
+  },
+  {
+    client_topic: "/jackal/forward/infra2/image_rect_raw/compressed",
+    rbf_topic: "/jackal/realsense_front/infra2/image_rect_raw/compressed",
+    type: "sensor_msgs/CompressedImage"
+  },
+  {
+    client_topic: "/jackal/forward/infra2/camera_info",
+    rbf_topic: "/jackal/realsense_front/infra2/camera_info",
+    type: "sensor_msgs/CameraInfo"
+  },
+  {
+    client_topic: "/jackal/forward/imu",
+    rbf_topic: "/jackal/realsense_front/imu",
+    type: "sensor_msgs/Imu"
+  },
+  {
+    client_topic: "/jackal/jackal_velocity_controller/odom",
+    rbf_topic: "/jackal/jackal_velocity_controller/odom",
+    type: "nav_msgs/Odometry"
+  },
+  {
+    client_topic: "/jackal/lidar_points",
+    rbf_topic: "/jackal/lidar_points",
+    type: "sensor_msgs/PointCloud2"
+  },
+  {
+    client_topic: "/philbart/forward/color/image_raw/compressed", 
+    rbf_topic: "/philbart/realsense_front/color/image_raw/compressed",  
+    type: "sensor_msgs/CompressedImage"
+  },
+  {
+    client_topic: "/philbart/forward/color/camera_info",
+    rbf_topic: "/philbart/realsense_front/color/camera_info",
+    type: "sensor_msgs/CameraInfo"
+  },
+  {
+    client_topic: "/philbart/forward/depth/image_rect_raw",
+    rbf_topic: "/philbart/realsense_front/depth/image_rect_raw",
+    type: "sensor_msgs/Image"
+  },
+  {
+    client_topic: "/philbart/forward/depth/camera_info",
+    rbf_topic: "/philbart/realsense_front/depth/camera_info",
+    type: "sensor_msgs/CameraInfo"
+  },
+  {
+    client_topic: "/philbart/forward/infra1/image_rect_raw/compressed",
+    rbf_topic: "/philbart/realsense_front/infra1/image_rect_raw/compressed",
+    type: "sensor_msgs/CompressedImage"
+  },
+  {
+    client_topic: "/philbart/forward/infra1/camera_info",
+    rbf_topic: "/philbart/realsense_front/infra1/camera_info",
+    type: "sensor_msgs/CameraInfo"
+  },
+  {
+    client_topic: "/philbart/forward/infra2/image_rect_raw/compressed",
+    rbf_topic: "/philbart/realsense_front/infra2/image_rect_raw/compressed",
+    type: "sensor_msgs/CompressedImage"
+  },
+  {
+    client_topic: "/philbart/forward/infra2/camera_info",
+    rbf_topic: "/philbart/realsense_front/infra2/camera_info",
+    type: "sensor_msgs/CameraInfo"
+  },
+  {
+    client_topic: "/philbart/forward/imu",
+    rbf_topic: "/philbart/realsense_front/imu",
+    type: "sensor_msgs/Imu"
+  },
+  {
+    client_topic: "/philbart/jackal_velocity_controller/odom",
+    rbf_topic: "/philbart/husky_velocity_controller/odom",
+    type: "nav_msgs/Odometry"
+  },
+  {
+    client_topic: "/philbart/lidar_points",
+    rbf_topic: "/philbart/lidar_points",
+    type: "sensor_msgs/PointCloud2"
+  }
+]

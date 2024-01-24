@@ -80,7 +80,7 @@ Visualization Manager:
       Radius: 0.029999999329447746
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
-      Topic: /acl_jackal/dpgo_ros_node/path
+      Topic: /jackal/dpgo_ros_node/path
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -103,7 +103,7 @@ Visualization Manager:
       Radius: 0.029999999329447746
       Shaft Diameter: 0.10000000149011612
       Shaft Length: 0.10000000149011612
-      Topic: /acl_jackal2/dpgo_ros_node/path
+      Topic: /philbart/dpgo_ros_node/path
       Unreliable: false
       Value: true
     - Alpha: 1
@@ -309,7 +309,7 @@ Visualization Manager:
         Value: false
         Wireframe Alpha: 1
         Wireframe Color: 0; 0; 0
-      Topic: /acl_jackal/kimera_pgmo/optimized_mesh
+      Topic: /jackal/kimera_pgmo/optimized_mesh
       Value: true
     - Class: rviz_mesh_plugin/TriangleMesh
       Display Type:
@@ -328,7 +328,7 @@ Visualization Manager:
         Value: false
         Wireframe Alpha: 1
         Wireframe Color: 0; 0; 0
-      Topic: /acl_jackal2/kimera_pgmo/optimized_mesh
+      Topic: /philbart/kimera_pgmo/optimized_mesh
       Value: true
     - Class: rviz_mesh_plugin/TriangleMesh
       Display Type:

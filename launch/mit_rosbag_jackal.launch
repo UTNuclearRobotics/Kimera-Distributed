@@ -1,0 +1,36 @@
+<launch>
+	<arg name="bagfile"   default="/home/yunchang/data/kimera.bag"/>
+	<arg name="input_ns"  default="sobek" />
+	<arg name="output_ns" default="sobek" />
+	<arg name="rate"      default="1.0"   />
+
+	<node pkg="rosbag" type="play" name="player_$(arg output_ns)" output="screen" 
+		args="$(arg bagfile) --clock -r $(arg rate) -s0.1 --topics
+		/$(arg input_ns)/detection_out_topic
+		/$(arg input_ns)/realsense_front/color/camera_info
+		/$(arg input_ns)/realsense_front/color/image_raw/compressed
+		/$(arg input_ns)/realsense_front/depth/camera_info
+		/$(arg input_ns)/realsense_front/depth/image_rect_raw
+		/$(arg input_ns)/realsense_front/imu
+		/$(arg input_ns)/realsense_front/infra1/camera_info
+		/$(arg input_ns)/realsense_front/infra1/image_rect_raw/compressed
+		/$(arg input_ns)/realsense_front/infra2/camera_info
+		/$(arg input_ns)/realsense_front/infra2/image_rect_raw/compressed
+		/$(arg input_ns)/jackal_velocity_controller/odom
+		/tf_static
+		/tf_aggregate">
+
+		<remap from="/$(arg input_ns)/detection_out_topic"                      		to="/$(arg output_ns)/detection_out_topic"/>
+		<remap from="/$(arg input_ns)/realsense_front/color/camera_info"                to="/$(arg output_ns)/forward/color/camera_info"/>
+		<remap from="/$(arg input_ns)/realsense_front/color/image_raw/compressed"       to="/$(arg output_ns)/forward/color/image_raw/compressed"/>
+		<remap from="/$(arg input_ns)/realsense_front/depth/camera_info"                to="/$(arg output_ns)/forward/depth/camera_info"/>
+		<remap from="/$(arg input_ns)/realsense_front/depth/image_rect_raw"             to="/$(arg output_ns)/forward/depth/image_rect_raw"/>
+		<remap from="/$(arg input_ns)/realsense_front/imu"                              to="/$(arg input_ns)/forward/imu"/>
+		<remap from="/$(arg input_ns)/realsense_front/infra1/camera_info"               to="/$(arg output_ns)/forward/infra1/camera_info"/>
+		<remap from="/$(arg input_ns)/realsense_front/infra1/image_rect_raw/compressed" to="/$(arg output_ns)/forward/infra1/image_rect_raw/compressed"/>
+		<remap from="/$(arg input_ns)/realsense_front/infra2/camera_info"               to="/$(arg output_ns)/forward/infra2/camera_info"/>
+		<remap from="/$(arg input_ns)/realsense_front/infra2/image_rect_raw/compressed" to="/$(arg output_ns)/forward/infra2/image_rect_raw/compressed"/>
+		<remap from="/$(arg input_ns)/jackal_velocity_controller/odom"          		to="/$(arg output_ns)/jackal_velocity_controller/odom"/>
+	</node> 
+
+</launch>

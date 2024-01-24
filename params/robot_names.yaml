@@ -1,8 +1,8 @@
-robot0_name: acl_jackal
-robot1_name: acl_jackal2
-robot2_name: sparkal1
-robot3_name: sparkal2
-robot4_name: hathor
-robot5_name: thoth
-robot6_name: apis
-robot7_name: sobek
+robot0_name: jackal
+robot1_name: philbart
+# robot2_name: sparkal1
+# robot3_name: sparkal2
+# robot4_name: hathor
+# robot5_name: thoth
+# robot6_name: apis
+# robot7_name: sobek
